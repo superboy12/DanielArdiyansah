@@ -992,8 +992,21 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
   .nav-links {
-    display: none; /* Simplify mobile view */
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-links a {
+    font-size: 0.95rem;
   }
 
   .contact-links {
