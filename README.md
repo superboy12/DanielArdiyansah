@@ -38,10 +38,7 @@ Bahasa pemrograman & alat yang saya gunakan setiap hari:
 ## 📊 Statistik GitHub Berwarna
 
 <div align="center">
-
-![GitHub Stats](https://readme-stats.demolab.com/api?username=superboy12&show_icons=true&theme=radical&hide_border=true)
-![GitHub Streak](https://streak-stats.demolab.com/?user=superboy12&theme=radical&hide_border=true)
-
+  <p><i>Server GitHub Stats pihak ketiga sedang mengalami gangguan global (Error 503). Namun, Kota Kontribusi 3D saya tetap aman di bawah ini!</i></p>
 </div>
 
 <br/>
