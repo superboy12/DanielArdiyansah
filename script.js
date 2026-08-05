@@ -259,7 +259,7 @@ soundToggle.addEventListener('click', () => {
    3. Interactive Virtual Pet logic
 ---------------------------------------------------- */
 const virtualCat = document.getElementById('virtual-cat');
-const catTail = document.getElementById('cat-tail');
+const catTails = document.querySelectorAll('.tail-wag-active');
 const moodCloud = document.getElementById('mood-cloud');
 const happinessBar = document.getElementById('happiness-bar');
 const fullnessBar = document.getElementById('fullness-bar');
@@ -333,21 +333,27 @@ function updateStats() {
 
 // Pet interaction
 function petTheCat() {
+  if (handleCatPoke()) return;
+
   synth.purr();
   petStats.happiness += 15;
   petStats.fullness -= 3; // Petting burns energy!
   updateStats();
   
   // Wag tail fast to show purr/happy state
-  catTail.className = '';
-  catTail.classList.add('tail-purring');
+  catTails.forEach(tail => {
+    tail.className = '';
+    tail.classList.add('tail-purring');
+  });
   
   showMoodBubble('Purrr... ❤️');
   spawnHearts();
   
   setTimeout(() => {
-    catTail.className = '';
-    catTail.classList.add('tail-wag-active');
+    catTails.forEach(tail => {
+      tail.className = '';
+      tail.classList.add('tail-wag-active');
+    });
   }, 1600);
 }
 
@@ -356,18 +362,18 @@ let pokeCount = 0;
 let pokeTimer = null;
 let isAngry = false;
 
-virtualCat.addEventListener('click', () => {
+function handleCatPoke() {
   if (isAngry) {
     synth.meow(0.3); // Low pitched angry hiss/growl
     showMoodBubble('HISS! 😾 Leave us alone!');
-    return;
+    return true;
   }
   
   pokeCount++;
   clearTimeout(pokeTimer);
-  pokeTimer = setTimeout(() => { pokeCount = 0; }, 2000);
+  pokeTimer = setTimeout(() => { pokeCount = 0; }, 3000);
 
-  if (pokeCount > 4) {
+  if (pokeCount > 3) {
     // Trigger angry mode!
     isAngry = true;
     petStats.happiness = 0; // Drops happiness completely
@@ -383,8 +389,13 @@ virtualCat.addEventListener('click', () => {
       virtualCat.classList.remove('cat-angry');
       showMoodBubble('Hmph. Fine. 😾');
     }, 6000);
-    return;
+    return true;
   }
+  return false;
+}
+
+virtualCat.addEventListener('click', () => {
+  if (handleCatPoke()) return;
 
   // Normal happy click
   synth.meow(1.05 + Math.random() * 0.1);
@@ -440,8 +451,10 @@ btnLaser.addEventListener('click', () => {
     synth.meow(0.85);
   } else {
     // Return eyes to center
-    document.getElementById('cat-eye-left').setAttribute('cx', '44');
-    document.getElementById('cat-eye-right').setAttribute('cx', '56');
+    document.querySelectorAll('.eye-l').forEach(el => el.setAttribute('cx', '44'));
+    document.querySelectorAll('.eye-r').forEach(el => el.setAttribute('cx', '56'));
+    document.querySelectorAll('.pupil-l').forEach(el => el.setAttribute('cx', '44.5'));
+    document.querySelectorAll('.pupil-r').forEach(el => el.setAttribute('cx', '56.5'));
   }
 });
 
@@ -466,19 +479,27 @@ stage.addEventListener('mousemove', (e) => {
   const angleL = Math.atan2(ly - leftEyeCenter.y, lx - leftEyeCenter.x);
   const lex = 44 + Math.cos(angleL) * 2;
   const ley = 42 + Math.sin(angleL) * 1.5;
-  document.getElementById('cat-eye-left').setAttribute('cx', lex);
-  document.getElementById('cat-eye-left').setAttribute('cy', ley);
-  document.getElementById('cat-pupil-left').setAttribute('cx', lex + 0.5);
-  document.getElementById('cat-pupil-left').setAttribute('cy', ley - 0.5);
+  document.querySelectorAll('.eye-l').forEach(el => {
+    el.setAttribute('cx', lex);
+    el.setAttribute('cy', ley);
+  });
+  document.querySelectorAll('.pupil-l').forEach(el => {
+    el.setAttribute('cx', lex + 0.5);
+    el.setAttribute('cy', ley - 0.5);
+  });
   
   // Right eye trace angle
   const angleR = Math.atan2(ly - rightEyeCenter.y, lx - rightEyeCenter.x);
   const rex = 56 + Math.cos(angleR) * 2;
   const rey = 42 + Math.sin(angleR) * 1.5;
-  document.getElementById('cat-eye-right').setAttribute('cx', rex);
-  document.getElementById('cat-eye-right').setAttribute('cy', rey);
-  document.getElementById('cat-pupil-right').setAttribute('cx', rex + 0.5);
-  document.getElementById('cat-pupil-right').setAttribute('cy', rey - 0.5);
+  document.querySelectorAll('.eye-r').forEach(el => {
+    el.setAttribute('cx', rex);
+    el.setAttribute('cy', rey);
+  });
+  document.querySelectorAll('.pupil-r').forEach(el => {
+    el.setAttribute('cx', rex + 0.5);
+    el.setAttribute('cy', rey - 0.5);
+  });
 
   // Jump animation pounce chance
   if (Math.random() < 0.02) {
