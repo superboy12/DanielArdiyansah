@@ -1,10 +1,10 @@
 <!-- Colorful Animated Header -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=timeGradient&amp;height=250&amp;section=header&amp;text=Daniel%20Ardiyansah&amp;fontSize=70&amp;fontColor=ffffff&amp;animation=twinkling&amp;fontAlignY=35&amp;desc=Android%20Developer%20%7C%20Web%20Craftsman&amp;descAlignY=55&amp;descSize=22" width="100%" alt="Header" />
-</div>
 
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=superboy12&amp;label=Profile%20Views&amp;color=ff69b4&amp;style=for-the-badge" alt="Visitor Count" />
+![Header](https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=Daniel%20Ardiyansah&fontSize=70&fontColor=ffffff&animation=twinkling&fontAlignY=35&desc=Android%20Developer%20|%20Web%20Craftsman&descAlignY=55&descSize=22)
+
+![Visitor Count](https://komarev.com/ghpvc/?username=superboy12&label=Profile%20Views&color=ff69b4&style=for-the-badge)
+
 </div>
 
 <br/>
@@ -38,10 +38,10 @@ Bahasa pemrograman & alat yang saya gunakan setiap hari:
 ## 📊 Statistik GitHub Berwarna
 
 <div align="center">
-  <!-- GitHub Stats Card -->
-  <img src="https://github-readme-stats.vercel.app/api?username=superboy12&amp;show_icons=true&amp;theme=radical&amp;hide_border=true&amp;bg_color=1E1E2E&amp;title_color=FF79C6&amp;icon_color=8BE9FD" alt="GitHub Stats" width="48%" />
-  <!-- GitHub Streak Card -->
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=superboy12&amp;theme=radical&amp;hide_border=true&amp;background=1E1E2E&amp;ring=FF79C6&amp;fire=FFB86C&amp;currStreakNum=8BE9FD" alt="GitHub Streak" width="48%" />
+
+![GitHub Stats](https://readme-stats.demolab.com/api?username=superboy12&show_icons=true&theme=radical&hide_border=true)
+![GitHub Streak](https://streak-stats.demolab.com/?user=superboy12&theme=radical&hide_border=true)
+
 </div>
 
 <br/>
