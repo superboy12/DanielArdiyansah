@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Ardiyansah | Cat-Themed Portfolio</title>
+  <meta name="description" content="Stunning cat-themed interactive portfolio of Daniel Ardiyansah, featuring cozy aesthetics, animated virtual cat pet, and contribution graph game.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-mode">
+  
+  <!-- Custom Paw Cursor Particle Canvas -->
+  <canvas id="paw-trail"></canvas>
+
+  <!-- Sound Toggle & Theme Toggle Controls -->
+  <div class="floating-controls">
+    <button id="sound-toggle" class="control-btn" title="Toggle Meows">
+      <i class="fas fa-volume-up"></i>
+    </button>
+    <button id="theme-toggle" class="control-btn" title="Toggle Night Theme">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="nav-container">
+      <div class="logo">
+        <svg viewBox="0 0 100 100" class="paw-logo">
+          <circle cx="50" cy="60" r="22" />
+          <circle cx="28" cy="35" r="9" />
+          <circle cx="43" cy="22" r="9" />
+          <circle cx="57" cy="22" r="9" />
+          <circle cx="72" cy="35" r="9" />
+        </svg>
+        <span>Daniel.meow</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#playground">Cat Room</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <div class="badge">🐾 Welcome to my Cat Condo!</div>
+        <h1 class="hero-title">Hi, I'm <span class="highlight">Daniel Ardiyansah</span></h1>
+        <p class="hero-subtitle">Android Developer & Web Craftsman. I build smooth apps, write clean code, and pet every cat I see.</p>
+        <div class="hero-buttons">
+          <a href="#playground" class="btn btn-primary"><i class="fas fa-play"></i> Play in Cat Room</a>
+          <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Hire Me</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar-wrapper">
+          <div class="cat-ears-frame"></div>
+          <!-- Cute SVG illustration of a cat looking through a laptop -->
+          <svg class="hero-cat-illustration" viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="catGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFAF7B" />
+                <stop offset="100%" stop-color="#D76D77" />
+              </linearGradient>
+            </defs>
+            <!-- Laptop back -->
+            <rect x="30" y="110" width="140" height="70" rx="10" fill="#2d3748" />
+            <line x1="20" y1="180" x2="180" y2="180" stroke="#4a5568" stroke-width="8" stroke-linecap="round" />
+            <!-- Laptop screen content glow -->
+            <rect x="40" y="118" width="120" height="52" rx="4" fill="#63b3ed" opacity="0.3" class="glow-pulse" />
+            <!-- Cat head peeking -->
+            <g class="peeking-cat">
+              <!-- Tail wagging in back -->
+              <path d="M 60 120 Q 30 90 40 60" stroke="#FFAF7B" stroke-width="12" fill="none" stroke-linecap="round" class="wag-tail" />
+              <!-- Ears -->
+              <polygon points="70,90 90,50 100,90" fill="#FFAF7B" />
+              <polygon points="75,85 90,58 95,85" fill="#FF8A8A" />
+              <polygon points="130,90 110,50 100,90" fill="#FFAF7B" />
+              <polygon points="125,85 110,58 105,85" fill="#FF8A8A" />
+              <!-- Head -->
+              <ellipse cx="100" cy="100" rx="35" ry="30" fill="url(#catGrad)" />
+              <!-- Eyes -->
+              <circle cx="88" cy="95" r="5" fill="#2D3748" class="eye-blink" />
+              <circle cx="112" cy="95" r="5" fill="#2D3748" class="eye-blink" />
+              <!-- Nose -->
+              <polygon points="98,103 102,103 100,105" fill="#FF8A8A" />
+              <!-- Blush -->
+              <circle cx="80" cy="102" r="4" fill="#FF8A8A" opacity="0.6" />
+              <circle cx="120" cy="102" r="4" fill="#FF8A8A" opacity="0.6" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+      <h2 class="section-title">🐾 Diary of an Android Developer</h2>
+      <div class="about-grid">
+        <div class="diary-card glass-card">
+          <div class="diary-header">
+            <span class="diary-date">05 August 2026</span>
+            <div class="cat-stamps">🐾🐾</div>
+          </div>
+          <h3>Current Quest: Offline-First Apps</h3>
+          <p>Lately, I've been diving deep into offline-first architectures for Android, building robust databases using Room, SQLite, and syncing with PostgreSQL backends. My code is structured, testable, and runs as smoothly as a cat walking on a fence.</p>
+        </div>
+        <div class="diary-card glass-card">
+          <div class="diary-header">
+            <span class="diary-date">Ongoing Mission</span>
+            <div class="cat-stamps">🐟🐾</div>
+          </div>
+          <h3>Passions & Skills</h3>
+          <p>I thrive at the intersection of native Android development, web experiences, software QA, and UI/UX design. I believe software interfaces should feel natural, responsive, and delight users with tiny magical moments (just like playing with a laser pointer!).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <h2 class="section-title">🐈 Tech Toy Box (Skills)</h2>
+      <p class="section-subtitle">Hover to swat the toys and watch them bounce!</p>
+      
+      <div class="toy-box">
+        <div class="toy-item" style="--toy-color: #f7df1e;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-js"></i> JavaScript</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #61dafb;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-react"></i> React</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #000000;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-node-js"></i> Next.js</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #f06529;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-html5"></i> HTML5</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #2965f1;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-css3-alt"></i> CSS3</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #4f5b93;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-php"></i> PHP</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #3776ab;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-python"></i> Python</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #3ddc84;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-android"></i> Android</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #7f52ff;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fas fa-code"></i> Kotlin</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #00bcd4;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fas fa-cubes"></i> Jetpack Compose</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #f24e1e;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fab fa-figma"></i> Figma</div>
+        </div>
+        <div class="toy-item" style="--toy-color: #007acc;">
+          <div class="toy-string"></div>
+          <div class="toy-ball"><i class="fas fa-laptop-code"></i> VS Code</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cat Room Playground Section -->
+    <section id="playground" class="playground-section">
+      <h2 class="section-title">🧶 Cat Room Playground</h2>
+      <p class="section-subtitle">Interact with the cat, play a game, and relax.</p>
+
+      <div class="playground-grid">
+        
+        <!-- Interactive Cat Widget (Feed/Pet/Laser) -->
+        <div class="play-card glass-card">
+          <h3>🐱 My Virtual Pet</h3>
+          <p class="card-desc">Click the cat to pet it, feed it a fish, or use the laser pointer.</p>
+          
+          <div class="pet-area">
+            <!-- Sound status feedback -->
+            <div id="mood-cloud" class="mood-bubble">Meow! 🐾</div>
+            
+            <div class="pet-stage">
+              <!-- Cute Interactive Cat SVG -->
+              <svg id="virtual-cat" class="cat-avatar-interactive" viewBox="0 0 100 100">
+                <!-- Tail -->
+                <path id="cat-tail" class="tail-wag-active" d="M 30 75 Q 10 70 15 50" stroke="#CBD5E0" stroke-width="8" fill="none" stroke-linecap="round" />
+                <!-- Feet -->
+                <circle cx="40" cy="80" r="5" fill="#A0AEC0" />
+                <circle cx="60" cy="80" r="5" fill="#A0AEC0" />
+                <!-- Body -->
+                <ellipse cx="50" cy="65" rx="20" ry="18" fill="#E2E8F0" />
+                <!-- Head -->
+                <circle cx="50" cy="45" r="16" fill="#E2E8F0" />
+                <!-- Ears -->
+                <polygon points="36,36 34,16 48,29" fill="#E2E8F0" />
+                <polygon points="39,33 37,20 46,28" fill="#F87171" />
+                <polygon points="64,36 66,16 52,29" fill="#E2E8F0" />
+                <polygon points="61,33 63,20 54,28" fill="#F87171" />
+                <!-- Eyes -->
+                <g id="cat-eyes">
+                  <circle id="cat-eye-left" cx="44" cy="42" r="2.5" fill="#2D3748" />
+                  <circle id="cat-eye-right" cx="56" cy="42" r="2.5" fill="#2D3748" />
+                  <circle id="cat-pupil-left" cx="44.5" cy="41.5" r="1" fill="#FFFFFF" />
+                  <circle id="cat-pupil-right" cx="56.5" cy="41.5" r="1" fill="#FFFFFF" />
+                </g>
+                <!-- Nose & Mouth -->
+                <polygon points="49,47 51,47 50,48.5" fill="#F87171" />
+                <path d="M 48 50 Q 50 52 52 50" stroke="#2D3748" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                <!-- Whiskers -->
+                <line x1="30" y1="47" x2="40" y2="47" stroke="#A0AEC0" stroke-width="1" />
+                <line x1="30" y1="44" x2="40" y2="45" stroke="#A0AEC0" stroke-width="1" />
+                <line x1="70" y1="47" x2="60" y2="47" stroke="#A0AEC0" stroke-width="1" />
+                <line x1="70" y1="44" x2="60" y2="45" stroke="#A0AEC0" stroke-width="1" />
+              </svg>
+              <!-- Flying Fish SVG (animated on feed) -->
+              <svg id="food-fish" class="food-fish-item" viewBox="0 0 50 30" style="display: none;">
+                <path d="M 5 15 Q 15 5 25 15 Q 35 25 45 15 L 45 20 Q 35 30 25 15 Q 15 25 5 15 Z" fill="#63B3ED" />
+                <polygon points="5,15 1,10 1,20" fill="#63B3ED" />
+                <circle cx="38" cy="12" r="1.5" fill="white" />
+              </svg>
+              <!-- Laser pointer dot -->
+              <div id="laser-dot" class="laser-dot" style="display: none;"></div>
+            </div>
+            
+            <div class="pet-stats">
+              <div class="stat-row">
+                <span>Happiness:</span>
+                <div class="bar-outer"><div id="happiness-bar" class="bar-inner happiness" style="width: 70%;"></div></div>
+              </div>
+              <div class="stat-row">
+                <span>Fullness:</span>
+                <div class="bar-outer"><div id="fullness-bar" class="bar-inner fullness" style="width: 50%;"></div></div>
+              </div>
+            </div>
+            
+            <div class="pet-actions">
+              <button id="btn-feed" class="btn btn-action"><i class="fas fa-fish"></i> Feed Fish</button>
+              <button id="btn-pet" class="btn btn-action"><i class="fas fa-hand-sparkles"></i> Pet Cat</button>
+              <button id="btn-laser" class="btn btn-action"><i class="fas fa-circle-radiation"></i> Laser Toy</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yarn Catch Game (GitHub Contribution Simulator) -->
+        <div class="play-card glass-card">
+          <div class="game-header">
+            <h3>🧶 Yarn Catch Contribution Grid</h3>
+            <div class="score-display">Score: <span id="game-score">0</span></div>
+          </div>
+          <p class="card-desc">Move the kitten with <b>WASD / Arrow Keys</b> or <b>Clicking on the grid</b> to catch yarn balls and complete your contribution graph!</p>
+          
+          <div class="game-container">
+            <canvas id="game-canvas"></canvas>
+            <div id="game-overlay" class="game-overlay">
+              <button id="btn-start-game" class="btn btn-primary"><i class="fas fa-play"></i> Start Playing</button>
+            </div>
+          </div>
+          <div class="game-info">
+            <span>🐾 Green blocks are your lit-up contributions!</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact & Social Section -->
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">🐟 Catch Me Outside (Contact)</h2>
+      <p class="section-subtitle">Let's build something awesome together! Connect with me on social media.</p>
+      
+      <div class="contact-links">
+        <a href="https://youtube.com/@superboy12" target="_blank" class="contact-card yt" id="youtube-link">
+          <i class="fab fa-youtube"></i>
+          <span>Youtube</span>
+        </a>
+        <a href="https://instagram.com/superboy12" target="_blank" class="contact-card ig" id="instagram-link">
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="mailto:daniel@example.com" class="contact-card mail" id="gmail-link">
+          <i class="fas fa-envelope"></i>
+          <span>Gmail</span>
+        </a>
+        <a href="https://linkedin.com/in/daniel-ardiyansah" target="_blank" class="contact-card ln" id="linkedin-link">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+
+      <!-- Visitor Counter -->
+      <div class="visitor-badge">
+        <span class="badge-tag"><i class="fas fa-eye"></i> visitors</span>
+        <span class="badge-value" id="visitor-count">137</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Daniel Ardiyansah. Created with love, tea, and lots of meows. 🐾</p>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="script.js"></script>
+</body>
+</html>
