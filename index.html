@@ -203,38 +203,81 @@
             <div id="mood-cloud" class="mood-bubble">Meow! 🐾</div>
             
             <div class="pet-stage">
-              <!-- Cute Interactive Cat SVG -->
-              <svg id="virtual-cat" class="cat-avatar-interactive" viewBox="0 0 100 100">
-                <!-- Tail -->
-                <path id="cat-tail" class="tail-wag-active" d="M 30 75 Q 10 70 15 50" stroke="#CBD5E0" stroke-width="8" fill="none" stroke-linecap="round" />
-                <!-- Feet -->
-                <circle cx="40" cy="80" r="5" fill="#A0AEC0" />
-                <circle cx="60" cy="80" r="5" fill="#A0AEC0" />
-                <!-- Body -->
-                <ellipse cx="50" cy="65" rx="20" ry="18" fill="#E2E8F0" />
-                <!-- Head -->
-                <circle cx="50" cy="45" r="16" fill="#E2E8F0" />
-                <!-- Ears -->
-                <polygon points="36,36 34,16 48,29" fill="#E2E8F0" />
-                <polygon points="39,33 37,20 46,28" fill="#F87171" />
-                <polygon points="64,36 66,16 52,29" fill="#E2E8F0" />
-                <polygon points="61,33 63,20 54,28" fill="#F87171" />
-                <!-- Eyes -->
-                <g id="cat-eyes">
-                  <circle id="cat-eye-left" cx="44" cy="42" r="2.5" fill="#2D3748" />
-                  <circle id="cat-eye-right" cx="56" cy="42" r="2.5" fill="#2D3748" />
-                  <circle id="cat-pupil-left" cx="44.5" cy="41.5" r="1" fill="#FFFFFF" />
-                  <circle id="cat-pupil-right" cx="56.5" cy="41.5" r="1" fill="#FFFFFF" />
-                </g>
-                <!-- Nose & Mouth -->
-                <polygon points="49,47 51,47 50,48.5" fill="#F87171" />
-                <path d="M 48 50 Q 50 52 52 50" stroke="#2D3748" stroke-width="1.2" fill="none" stroke-linecap="round" />
-                <!-- Whiskers -->
-                <line x1="30" y1="47" x2="40" y2="47" stroke="#A0AEC0" stroke-width="1" />
-                <line x1="30" y1="44" x2="40" y2="45" stroke="#A0AEC0" stroke-width="1" />
-                <line x1="70" y1="47" x2="60" y2="47" stroke="#A0AEC0" stroke-width="1" />
-                <line x1="70" y1="44" x2="60" y2="45" stroke="#A0AEC0" stroke-width="1" />
-              </svg>
+              <div id="virtual-cat" class="cat-avatar-interactive" style="display:flex; justify-content:center; gap: 10px; width: 240px; margin: 0 auto;">
+                <!-- Tuxedo Cat (80% Black, 20% White) -->
+                <svg class="cat-svg-item" viewBox="0 0 100 100" style="width: 100%; height: 100%; overflow: visible;">
+                  <!-- Tail -->
+                  <path class="tail-wag-active" d="M 30 75 Q 10 70 15 50" stroke="#1A202C" stroke-width="8" fill="none" stroke-linecap="round" />
+                  <!-- Feet -->
+                  <circle cx="40" cy="80" r="5" fill="#FFFFFF" />
+                  <circle cx="60" cy="80" r="5" fill="#FFFFFF" />
+                  <!-- Body -->
+                  <ellipse cx="50" cy="65" rx="20" ry="18" fill="#1A202C" />
+                  <!-- Belly (White 20%) -->
+                  <ellipse cx="50" cy="70" rx="12" ry="10" fill="#FFFFFF" />
+                  <!-- Head -->
+                  <circle cx="50" cy="45" r="16" fill="#1A202C" />
+                  <!-- Muzzle (White) -->
+                  <ellipse cx="50" cy="48" rx="8" ry="6" fill="#FFFFFF" />
+                  <!-- Ears -->
+                  <polygon points="36,36 34,16 48,29" fill="#1A202C" />
+                  <polygon points="39,33 37,20 46,28" fill="#F87171" />
+                  <polygon points="64,36 66,16 52,29" fill="#1A202C" />
+                  <polygon points="61,33 63,20 54,28" fill="#F87171" />
+                  <!-- Eyes -->
+                  <g class="cat-eyes">
+                    <circle cx="44" cy="42" r="2.5" fill="#E2E8F0" />
+                    <circle cx="56" cy="42" r="2.5" fill="#E2E8F0" />
+                    <circle cx="44.5" cy="41.5" r="1" fill="#FFFFFF" />
+                    <circle cx="56.5" cy="41.5" r="1" fill="#FFFFFF" />
+                  </g>
+                  <!-- Nose & Mouth -->
+                  <polygon points="49,47 51,47 50,48.5" fill="#F87171" />
+                  <path d="M 48 50 Q 50 52 52 50" stroke="#1A202C" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                  <!-- Whiskers -->
+                  <line x1="30" y1="47" x2="40" y2="47" stroke="#E2E8F0" stroke-width="1" />
+                  <line x1="30" y1="44" x2="40" y2="45" stroke="#E2E8F0" stroke-width="1" />
+                  <line x1="70" y1="47" x2="60" y2="47" stroke="#E2E8F0" stroke-width="1" />
+                  <line x1="70" y1="44" x2="60" y2="45" stroke="#E2E8F0" stroke-width="1" />
+                </svg>
+                
+                <!-- Orange Tabby Cat -->
+                <svg class="cat-svg-item" viewBox="0 0 100 100" style="width: 100%; height: 100%; overflow: visible;">
+                  <!-- Tail -->
+                  <path class="tail-wag-active" d="M 30 75 Q 10 70 15 50" stroke="#DD6B20" stroke-width="8" fill="none" stroke-linecap="round" />
+                  <!-- Feet -->
+                  <circle cx="40" cy="80" r="5" fill="#FBD38D" />
+                  <circle cx="60" cy="80" r="5" fill="#FBD38D" />
+                  <!-- Body -->
+                  <ellipse cx="50" cy="65" rx="20" ry="18" fill="#F6AD55" />
+                  <!-- Head -->
+                  <circle cx="50" cy="45" r="16" fill="#F6AD55" />
+                  <!-- Stripes on head (Tabby) -->
+                  <line x1="50" y1="30" x2="50" y2="38" stroke="#C05621" stroke-width="2" stroke-linecap="round" />
+                  <line x1="46" y1="31" x2="48" y2="37" stroke="#C05621" stroke-width="2" stroke-linecap="round" />
+                  <line x1="54" y1="31" x2="52" y2="37" stroke="#C05621" stroke-width="2" stroke-linecap="round" />
+                  <!-- Ears -->
+                  <polygon points="36,36 34,16 48,29" fill="#F6AD55" />
+                  <polygon points="39,33 37,20 46,28" fill="#F87171" />
+                  <polygon points="64,36 66,16 52,29" fill="#F6AD55" />
+                  <polygon points="61,33 63,20 54,28" fill="#F87171" />
+                  <!-- Eyes -->
+                  <g class="cat-eyes">
+                    <circle cx="44" cy="42" r="2.5" fill="#2D3748" />
+                    <circle cx="56" cy="42" r="2.5" fill="#2D3748" />
+                    <circle cx="44.5" cy="41.5" r="1" fill="#FFFFFF" />
+                    <circle cx="56.5" cy="41.5" r="1" fill="#FFFFFF" />
+                  </g>
+                  <!-- Nose & Mouth -->
+                  <polygon points="49,47 51,47 50,48.5" fill="#F87171" />
+                  <path d="M 48 50 Q 50 52 52 50" stroke="#2D3748" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                  <!-- Whiskers -->
+                  <line x1="30" y1="47" x2="40" y2="47" stroke="#7B341E" stroke-width="1" />
+                  <line x1="30" y1="44" x2="40" y2="45" stroke="#7B341E" stroke-width="1" />
+                  <line x1="70" y1="47" x2="60" y2="47" stroke="#7B341E" stroke-width="1" />
+                  <line x1="70" y1="44" x2="60" y2="45" stroke="#7B341E" stroke-width="1" />
+                </svg>
+              </div>
               <!-- Flying Fish SVG (animated on feed) -->
               <svg id="food-fish" class="food-fish-item" viewBox="0 0 50 30" style="display: none;">
                 <path d="M 5 15 Q 15 5 25 15 Q 35 25 45 15 L 45 20 Q 35 30 25 15 Q 15 25 5 15 Z" fill="#63B3ED" />
