@@ -646,7 +646,16 @@ section {
 
 .cat-angry {
   animation: angryShake 0.1s ease-in-out infinite alternate !important;
-  filter: drop-shadow(0 0 10px red) sepia(0.5) hue-rotate(-50deg) saturate(2);
+  filter: drop-shadow(0 0 10px red) saturate(1.5);
+}
+
+.cat-angry .angry-elements {
+  opacity: 1 !important;
+}
+
+.cat-angry .eye-l, .cat-angry .eye-r {
+  fill: #ff0000 !important;
+  transition: fill 0.3s;
 }
 
 @keyframes angryShake {
