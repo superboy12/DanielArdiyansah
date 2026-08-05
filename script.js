@@ -351,8 +351,42 @@ function petTheCat() {
   }, 1600);
 }
 
-// Click cat avatar directly
+// Click cat avatar directly (with anger mechanic!)
+let pokeCount = 0;
+let pokeTimer = null;
+let isAngry = false;
+
 virtualCat.addEventListener('click', () => {
+  if (isAngry) {
+    synth.meow(0.3); // Low pitched angry hiss/growl
+    showMoodBubble('HISS! 😾 Leave us alone!');
+    return;
+  }
+  
+  pokeCount++;
+  clearTimeout(pokeTimer);
+  pokeTimer = setTimeout(() => { pokeCount = 0; }, 2000);
+
+  if (pokeCount > 4) {
+    // Trigger angry mode!
+    isAngry = true;
+    petStats.happiness = 0; // Drops happiness completely
+    updateStats();
+    showMoodBubble('HISS! 😾 (Too many pokes!)');
+    virtualCat.classList.add('cat-angry');
+    synth.meow(0.2); // Very low angry sound
+    
+    // Cooldown from anger after 6 seconds
+    setTimeout(() => {
+      isAngry = false;
+      pokeCount = 0;
+      virtualCat.classList.remove('cat-angry');
+      showMoodBubble('Hmph. Fine. 😾');
+    }, 6000);
+    return;
+  }
+
+  // Normal happy click
   synth.meow(1.05 + Math.random() * 0.1);
   petStats.happiness += 8;
   updateStats();
